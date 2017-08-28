@@ -1,8 +1,9 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion 26
-    buildToolsVersion "26.0.0"
+    buildToolsVersion "26.0.1"
     defaultConfig {
         applicationId "com.example.suts.mytestapplication1"
         minSdkVersion 15
@@ -24,7 +25,21 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:26.+'
+
+    compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
+    compile 'com.android.support:recyclerview-v7:26.0.0-alpha1'  //RecyclerView
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.jakewharton:butterknife:8.8.1'  //快速注解butterknife
     testCompile 'junit:junit:4.12'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    //Glide图片加载和显示效果
+    compile 'com.github.bumptech.glide:glide:4.0.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0'
+    compile 'jp.wasabeef:glide-transformations:2.0.2'
+    compile 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1' // If you want to use the GPU Filters
+
+    //网络请求库：retrofit（square公司产品，封装了okhttp）
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+
 }
