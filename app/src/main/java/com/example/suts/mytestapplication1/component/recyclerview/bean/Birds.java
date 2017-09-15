@@ -1,4 +1,4 @@
-package com.example.suts.mytestapplication1.component.recyclerview;
+package com.example.suts.mytestapplication1.component.recyclerview.bean;
 
 /**
  * Created by suts on 2017/8/28.
@@ -48,5 +48,10 @@ public class Birds {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "name=" + name + "  contry=" + contry + "\nimageurl=" + imageUrl + "\nid=" + id;
     }
 }

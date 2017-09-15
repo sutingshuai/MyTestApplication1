@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.suts.mytestapplication1.aidltest.AidlTestActivity">
+
+    <Button
+        android:id="@+id/btn_getBooks"
+        android:layout_width="match_parent"
+        android:text="getBooks"
+        android:layout_height="wrap_content" />
+
+
+    <Button
+        android:id="@+id/btn_aidl_addBookIn"
+        android:layout_width="match_parent"
+        android:text="addBookIn"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_aidl_getBookCount"
+        android:layout_width="match_parent"
+        android:text="getBookCount"
+        android:layout_height="wrap_content" />
+
+
+    <Button
+        android:id="@+id/btn_aidl_getBook"
+        android:layout_width="match_parent"
+        android:text="getBook"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_aidl_setBookPrice"
+        android:layout_width="match_parent"
+        android:text="setBookPrice"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_aidl_setBookName"
+        android:layout_width="match_parent"
+        android:text="setBookName"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_aidl_addBookOut"
+        android:layout_width="match_parent"
+        android:text="addBookOut"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_aidl_addBookInOut"
+        android:layout_width="match_parent"
+        android:text="addBookInOut"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
