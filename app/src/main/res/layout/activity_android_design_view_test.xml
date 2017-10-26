@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.suts.mytestapplication1.AndroidDesignViewTest">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/abl_appBarLayoutTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <!--<android.support.design.widget.CollapsingToolbarLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:fitsSystemWindows="true"-->
+        <!--app:contentScrim="?attr/colorPrimary"-->
+        <!--app:layout_scrollFlags="scroll|enterAlways|snap"-->
+        <!--app:statusBarScrim="?attr/colorPrimary"-->
+        <!--app:titleEnabled="false">-->
+
+        <!--<ImageView-->
+        <!--android:scaleType="centerCrop"-->
+        <!--android:src="@mipmap/ic_test1"-->
+        <!--app:layout_collapseMode="parallax"-->
+        <!--app:layout_collapseParallaxMultiplier="0"-->
+        <!--android:fitsSystemWindows="true"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="100dp" />-->
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tb_toolbarDesignTest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:fitsSystemWindows="true"
+            app:layout_collapseParallaxMultiplier="0"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:navigationIcon="@mipmap/ic_back_toolbar"
+            app:popupTheme="@style/ToolbarPopupTheme"
+            app:subtitle="SubTitle"
+            app:subtitleTextColor="@color/white"
+            app:title="My ToolBar"
+            app:titleTextColor="@color/white"></android.support.v7.widget.Toolbar>
+
+        <!--</android.support.design.widget.CollapsingToolbarLayout>-->
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabMode="fixed" />
+
+    </android.support.design.widget.AppBarLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>

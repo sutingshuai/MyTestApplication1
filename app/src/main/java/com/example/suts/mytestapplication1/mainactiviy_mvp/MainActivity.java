@@ -6,12 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -24,7 +26,6 @@ import com.example.suts.mytestapplication1.component.recyclerview.adapter.Recycl
 import com.example.suts.mytestapplication1.component.recyclerview.bean.Birds;
 import com.example.suts.mytestapplication1.utils.glideutil.GlideApp;
 import com.example.suts.mytestapplication1.utils.glideutil.GlideLoadUtil;
-import com.google.gson.Gson;
 import com.orhanobut.logger.Logger;
 
 import java.lang.ref.WeakReference;
@@ -39,8 +40,18 @@ public class MainActivity extends BaseActivity implements IMainView {
 
     @BindView(R.id.rv_RecyclerViewTest)
     RecyclerView rvRecyclerViewTest;
-    @BindView(R.id.srl_recyclerViewTest)
-    SwipeRefreshLayout srlrecyclerViewTest;
+    @BindView(R.id.imageviewMainTop)
+    ImageView imageviewMainTop;
+    @BindView(R.id.toolbarMain)
+    Toolbar toolbarMain;
+    @BindView(R.id.collapsingtoolbarLayoutMain)
+    CollapsingToolbarLayout collapsingtoolbarLayoutMain;
+    @BindView(R.id.appBarLayoutMain)
+    AppBarLayout appBarLayoutMain;
+    @BindView(R.id.coordinatorLayout_main)
+    CoordinatorLayout coordinatorLayoutMain;
+//    @BindView(R.id.srl_recyclerViewTest)
+//    SwipeRefreshLayout srlrecyclerViewTest;
 
     private RecyclerViewUserAdapter mAdapter;
     private int mCurrentCount = 0;
@@ -58,11 +69,14 @@ public class MainActivity extends BaseActivity implements IMainView {
         ButterKnife.bind(this);
 
         Logger.i("MainActivity has Create");
-        if (mPresenter == null){
+        if (mPresenter == null) {
             mPresenter = new MainPresenterImpl(this);
         }
         mPresenter.onCreate();
         mPresenter.addData();
+
+        GlideApp.with(this).load(HeaderImageViewUrl).apply(GlideLoadUtil.getDefaultRequestOp()).into(imageviewMainTop);
+
 
     }
 
@@ -84,10 +98,10 @@ public class MainActivity extends BaseActivity implements IMainView {
         mAdapter.openLoadAnimation(BaseQuickAdapter.SLIDEIN_RIGHT);
         mAdapter.isFirstOnly(false);
 
-        View headerView = LayoutInflater.from(this).inflate(R.layout.recyclerview_headerview1, null);
-        ImageView iv_recyclerViewHeader = headerView.findViewById(R.id.iv_recyclerViewHeader);
-        GlideApp.with(this).load(HeaderImageViewUrl).apply(GlideLoadUtil.getDefaultRequestOp()).into(iv_recyclerViewHeader);
-        mAdapter.addHeaderView(headerView);
+//        View headerView = LayoutInflater.from(this).inflate(R.layout.recyclerview_headerview1, null);
+//        ImageView iv_recyclerViewHeader = headerView.findViewById(R.id.iv_recyclerViewHeader);
+//        GlideApp.with(this).load(HeaderImageViewUrl).apply(GlideLoadUtil.getDefaultRequestOp()).into(iv_recyclerViewHeader);
+//        mAdapter.addHeaderView(headerView);
 //        View footerView = LayoutInflater.from(this).inflate(R.layout.recyclerview_footerview1, null);
 //        mAdapter.addFooterView(footerView);
 //        mAdapter.setFooterViewAsFlow(true);   //设置是否作为最后一个item 只对GridLayoutManager有用
@@ -137,17 +151,17 @@ public class MainActivity extends BaseActivity implements IMainView {
 
     @Override
     public void initSwipeRefreshView() {
-        srlrecyclerViewTest.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                srlrecyclerViewTest.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        srlrecyclerViewTest.setRefreshing(false);
-                    }
-                }, 500);
-            }
-        });
+//        srlrecyclerViewTest.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+//            @Override
+//            public void onRefresh() {
+//                srlrecyclerViewTest.postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        srlrecyclerViewTest.setRefreshing(false);
+//                    }
+//                }, 500);
+//            }
+//        });
     }
 
     @Override
@@ -158,7 +172,7 @@ public class MainActivity extends BaseActivity implements IMainView {
 
     @Override
     public void showProgressDialog() {
-        if (progressDialog == null){
+        if (progressDialog == null) {
             progressDialog = new ProgressDialog(this);
             progressDialog.setMessage("loading...");
         }
@@ -167,7 +181,7 @@ public class MainActivity extends BaseActivity implements IMainView {
 
     @Override
     public void hidProgressDialog() {
-        if (progressDialog!=null){
+        if (progressDialog != null) {
             progressDialog.dismiss();
         }
     }

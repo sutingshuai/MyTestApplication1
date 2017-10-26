@@ -2,10 +2,13 @@
 
     <!-- Base application theme. -->
 
-    <style name="BaseThemeStyle"  parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="BaseThemeStyle"  parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/green</item>
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="actionOverflowMenuStyle">@style/ToolbarPopupTheme</item>
     </style>
 
     <style name="AppTheme" parent="BaseThemeStyle">

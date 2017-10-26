@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_androidDesignTest1"
+        android:icon="@mipmap/ic_find_menu"
+        android:title="First"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_androidDesignTest2"
+        android:icon="@mipmap/ic_share_menu"
+        android:title="Second"
+        app:showAsAction="never"  />
+
+    <item
+        android:id="@+id/menu_androidDesignTest3"
+        android:icon="@mipmap/ic_find_menu"
+        android:title="Third"
+        app:showAsAction="never"  />
+
+    <item
+        android:id="@+id/menu_androidDesignTest4"
+        android:icon="@mipmap/ic_more_menu_ver"
+        android:title="Fourth"
+        app:showAsAction="never"  />
+
+    <item
+        android:id="@+id/menu_androidDesignTest5"
+        android:icon="@mipmap/ic_find_menu"
+        android:title="fifth"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/menu_androidDesignTest6"
+        android:icon="@mipmap/ic_more_menu_ver"
+        android:title="sixth"
+        app:showAsAction="never"  />
+
+</menu>

@@ -3,6 +3,8 @@ package com.example.suts.mytestapplication1.mainactiviy_mvp;
 import android.app.Activity;
 import android.os.Handler;
 
+import com.example.suts.mytestapplication1.AndroidDesignViewTest;
+import com.example.suts.mytestapplication1.Game2048Activity;
 import com.example.suts.mytestapplication1.MultiItemAdapterActivity;
 import com.example.suts.mytestapplication1.SectionAdapterActivity;
 import com.example.suts.mytestapplication1.aidltest.AidlTestActivity;
@@ -18,7 +20,7 @@ import java.util.List;
  */
 
 public class MainModelImpl implements IMainModel {
-    public final static Class<?>[] ACTIVITYS = {SectionAdapterActivity.class, MultiItemAdapterActivity.class, AidlTestActivity.class, MVPTestActivity.class, MyPullToRefreshViewActivity.class};
+    public final static Class<?>[] ACTIVITYS = {AndroidDesignViewTest.class, SectionAdapterActivity.class, MultiItemAdapterActivity.class, AidlTestActivity.class, MVPTestActivity.class, MyPullToRefreshViewActivity.class, Game2048Activity.class};
 
     @Override
     public void setData(final MainOperateInterfaces.IMainSetDataFinished iMainSetDataFinished) {

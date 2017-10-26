@@ -13,9 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".mainactiviy_mvp.MainActivity"
-            android:theme="@style/AppTheme_StatusTrans">
+        <activity android:name=".mainactiviy_mvp.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -38,7 +36,9 @@
 
         <activity android:name=".aidltest.AidlTestActivity" />
         <activity android:name=".mvp.MVPTestActivity" />
-        <activity android:name=".myviews.MyPullToRefreshViewActivity"/>
+        <activity android:name=".myviews.MyPullToRefreshViewActivity" />
+        <activity android:name=".AndroidDesignViewTest" />
+        <activity android:name=".Game2048Activity"></activity>
     </application>
 
 </manifest>
